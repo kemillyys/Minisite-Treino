@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Aurora | Estética Avançada em Londrina</title>
+  <meta name="description" content="Minissite fictício para treino de Meta Pixel e conversão para WhatsApp.">
+
+  <!-- META PIXEL -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {
+      if(f.fbq)return;
+      n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+      };
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
+
+    fbq('init', '4958349554491714');
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=4958349554491714&ev=PageView&noscript=1"
+      alt=""
+    >
+  </noscript>
+  <!-- FIM META PIXEL -->
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #2b2625;
+      background: #fffaf8;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #eee3df;
+      backdrop-filter: blur(8px);
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      gap: 20px;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      color: #7d4b43;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #403836;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .nav-links a:hover { color: #9e6358; }
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top right, #f2d4cd 0, transparent 35%),
+        linear-gradient(135deg, #fffaf8, #f5ece9);
+      padding: 70px 20px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .tag {
+      display: inline-block;
+      background: #eed2cc;
+      color: #70453e;
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(40px, 6vw, 66px);
+      line-height: 1.03;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 19px;
+      color: #655d5a;
+      margin-bottom: 28px;
+      max-width: 650px;
+    }
+    .hero-card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.08);
+    }
+    .hero-card h3 { margin-bottom: 12px; }
+    .hero-card ul {
+      padding-left: 20px;
+      color: #5d5552;
+    }
+    .btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 15px 24px;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(37,211,102,0.22);
+      transition: 0.2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(0.96);
+    }
+    .btn.secondary {
+      background: #7d4b43;
+      box-shadow: none;
+      margin-left: 10px;
+    }
+    section { padding: 78px 20px; }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+    .section-title p { color: #6d6562; }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .service-card {
+      background: white;
+      padding: 26px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .service-card h3 { margin-bottom: 10px; }
+    .service-card p {
+      color: #625a57;
+      margin-bottom: 16px;
+    }
+    .service-card button {
+      border: none;
+      background: transparent;
+      color: #8b554b;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0;
+    }
+    .about { background: #f7eeeb; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-box {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+    }
+    .about-box ul { padding-left: 20px; }
+    .results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .result-card {
+      background: white;
+      border-left: 4px solid #b57367;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+    }
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+    details {
+      background: white;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .location-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .location-card {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .contact {
+      background: #3d2c28;
+      color: white;
+      text-align: center;
+    }
+    .contact p {
+      color: #e8ddda;
+      margin: 12px auto 24px;
+      max-width: 650px;
+    }
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 13px;
+      color: #777;
+      background: white;
+    }
+    @media (max-width: 850px) {
+      .hero-inner,
+      .about-grid,
+      .location-box {
+        grid-template-columns: 1fr;
+      }
+      .services,
+      .results {
+        grid-template-columns: 1fr;
+      }
+      .nav-container {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .nav-links { justify-content: flex-start; }
+      .btn.secondary {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Clínica Aurora</div>
+      <div class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="tag">Minissite fictício para treinamento</span>
+        <h1>Estética avançada em Londrina</h1>
+        <p>
+          Conheça nossos principais tratamentos, entenda como funciona a avaliação
+          e fale com a equipe pelo WhatsApp.
+        </p>
+
+        <a
+          class="btn whatsapp-btn"
+          href="https://wa.me/5543996873022?text=Ol%C3%A1%21%20Vim%20pelo%20minissite%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+          target="_blank"
+          rel="noopener noreferrer">
+          Agendar avaliação
+        </a>
+
+        <a class="btn secondary" href="#tratamentos">
+          Ver tratamentos
+        </a>
+      </div>
+
+      <div class="hero-card">
+        <h3>Encontre o que precisa</h3>
+        <ul>
+          <li>Tratamentos faciais</li>
+          <li>Tratamentos corporais</li>
+          <li>Depilação a laser</li>
+          <li>Avaliação personalizada</li>
+          <li>Atendimento em Londrina-PR</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section id="tratamentos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Tratamentos</h2>
+        <p>Exemplos fictícios para demonstrar a estrutura de um minissite.</p>
+      </div>
+
+      <div class="services">
+        <article class="service-card">
+          <h3>Depilação a Laser</h3>
+          <p>
+            Página de apresentação do serviço com foco em praticidade,
+            avaliação individual e orientação profissional.
+          </p>
+          <button class="service-view" data-service="Depilação a Laser">
+            Ver interesse no serviço
+          </button>
+        </article>
+
+        <article class="service-card">
+          <h3>Rejuvenescimento Facial</h3>
+          <p>
+            Protocolos estéticos voltados à qualidade da pele,
+            sempre após avaliação individual.
+          </p>
+          <button class="service-view" data-service="Rejuvenescimento Facial">
+            Ver interesse no serviço
+          </button>
+        </article>
+
+        <article class="service-card">
+          <h3>Estética Corporal</h3>
+          <p>
+            Opções de protocolos corporais conforme avaliação,
+            objetivos e indicação profissional.
+          </p>
+          <button class="service-view" data-service="Estética Corporal">
+            Ver interesse no serviço
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Sobre a clínica</h2>
+        <p>Área institucional do minissite.</p>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <h3>Atendimento personalizado</h3>
+          <p>
+            A Clínica Aurora é uma empresa fictícia criada para treinamento de
+            marketing digital. Esta seção demonstra onde uma clínica poderia
+            apresentar sua proposta, equipe, diferenciais e posicionamento.
+          </p>
+        </div>
+
+        <div class="about-box">
+          <h3>O que o cliente encontra aqui</h3>
+          <ul>
+            <li>Informações sobre a clínica</li>
+            <li>Apresentação de vários serviços</li>
+            <li>Dúvidas frequentes</li>
+            <li>Localização</li>
+            <li>Botões de contato</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resultados">
+    <div class="container">
+      <div class="section-title">
+        <h2>Experiências</h2>
+        <p>Depoimentos abaixo são fictícios e usados somente para treinamento.</p>
+      </div>
+
+      <div class="results">
+        <article class="result-card">
+          <strong>Depoimento fictício</strong>
+          <p>“Gostei de receber todas as informações antes de decidir.”</p>
+        </article>
+
+        <article class="result-card">
+          <strong>Depoimento fictício</strong>
+          <p>“O contato pelo WhatsApp deixou o agendamento mais simples.”</p>
+        </article>
+
+        <article class="result-card">
+          <strong>Depoimento fictício</strong>
+          <p>“Consegui encontrar os tratamentos e a localização rapidamente.”</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container faq">
+      <div class="section-title">
+        <h2>Dúvidas frequentes</h2>
+      </div>
+
+      <details>
+        <summary>Como funciona a primeira avaliação?</summary>
+        <p>
+          O profissional entende o objetivo do cliente e orienta sobre
+          possibilidades de tratamento.
+        </p>
+      </details>
+
+      <details>
+        <summary>Como faço para agendar?</summary>
+        <p>
+          Basta clicar em qualquer botão de WhatsApp do site.
+        </p>
+      </details>
+
+      <details>
+        <summary>A clínica atende somente Londrina?</summary>
+        <p>
+          Este projeto é fictício e usa Londrina apenas como exemplo de negócio local.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <section id="localizacao">
+    <div class="container">
+      <div class="section-title">
+        <h2>Localização</h2>
+      </div>
+
+      <div class="location-box">
+        <div class="location-card">
+          <h3>Londrina-PR</h3>
+          <p>Endereço fictício utilizado somente para demonstração.</p>
+          <p>
+            Rua Exemplo, 100<br>
+            Centro — Londrina-PR
+          </p>
+        </div>
+
+        <div class="location-card">
+          <h3>Horário</h3>
+          <p>
+            Segunda a sexta: 9h às 18h<br>
+            Sábado: 9h às 13h
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="container">
+      <h2>Quer conversar com a equipe?</h2>
+      <p>
+        Clique no botão abaixo. O clique será registrado como evento
+        <strong>Contact</strong> no Meta Pixel.
+      </p>
+
+      <a
+        class="btn whatsapp-btn"
+        href="https://wa.me/5543996873022?text=Ol%C3%A1%21%20Vim%20pelo%20minissite%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+        target="_blank"
+        rel="noopener noreferrer">
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Minissite fictício criado exclusivamente para treinamento de marketing digital.
+  </footer>
+
+  <script>
+    // Evento Contact nos botões do WhatsApp
+    document.querySelectorAll('.whatsapp-btn').forEach(function(botao) {
+      botao.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Contact');
+        }
+      });
+    });
+
+    // Evento ViewContent nos botões dos serviços
+    document.querySelectorAll('.service-view').forEach(function(botao) {
+      botao.addEventListener('click', function() {
+        const servico = botao.getAttribute('data-service');
+
+        if (typeof fbq === 'function') {
+          fbq(
+            'track',
+            'ViewContent',
+            {
+              content_name: servico,
+              content_category: 'Tratamento'
+            }
+          );
+        }
+
+        alert('Evento ViewContent enviado para o serviço: ' + servico);
+      });
+    });
+  </script>
+
+</body>
+</html>
